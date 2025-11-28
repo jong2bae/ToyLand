@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antigravity Vibe Coding Presentation</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; overflow: hidden; background-color: #f0f2f5; }
+        .slide { display: none; height: 100vh; width: 100vw; justify-content: center; align-items: center; flex-direction: column; padding: 40px; box-sizing: border-box; text-align: center; background: white; }
+        .slide.active { display: flex; animation: fadeIn 0.5s; }
+        h1 { font-size: 3.5rem; color: #2c3e50; margin-bottom: 0.5rem; }
+        h2 { font-size: 2.5rem; color: #34495e; margin-bottom: 1.5rem; border-bottom: 3px solid #3498db; padding-bottom: 10px; display: inline-block; }
+        h3 { font-size: 1.8rem; color: #7f8c8d; }
+        ul { text-align: left; font-size: 1.8rem; line-height: 1.6; max-width: 800px; }
+        li { margin-bottom: 15px; }
+        strong { color: #e74c3c; }
+        .controls { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; }
+        button { padding: 10px 20px; font-size: 1rem; cursor: pointer; background: #3498db; color: white; border: none; border-radius: 5px; }
+        button:hover { background: #2980b9; }
+        button:disabled { background: #bdc3c7; cursor: not-allowed; }
+        .progress { position: fixed; bottom: 0; left: 0; height: 5px; background: #3498db; transition: width 0.3s; }
+        code { background: #f8f9fa; padding: 2px 5px; border-radius: 3px; color: #e83e8c; font-family: monospace; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .lead { background: #2c3e50; color: white; }
+        .lead h1, .lead h2, .lead h3 { color: white; }
+        .lead h2 { border-bottom-color: #e74c3c; }
+    </style>
+</head>
+<body>
+
+    <div class="progress" id="progressBar"></div>
+
+    <!-- Slide 1 -->
+    <div class="slide active lead">
+        <h1>Antigravity와 함께하는<br>Vibe Coding</h1>
+        <h3>AI와 춤추듯 코딩하며 20분 만에 예약 봇 만들기</h3>
+        <p style="margin-top: 50px; font-size: 1.2rem;">발표자: [발표자 성함]</p>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+        <h2>Vibe Coding이란?</h2>
+        <p style="font-size: 1.5rem; margin-bottom: 40px;">개발자가 <strong>"의도(Vibe)"</strong>를 던지면,<br>AI가 <strong>"구현(Gravity)"</strong>을 담당하는 새로운 협업 방식</p>
+        <ul>
+            <li>💡 <strong>Idea First</strong>: 문법보다 '무엇을 만들고 싶은가'가 중요</li>
+            <li>⚡ <strong>Speed</strong>: 생각하는 속도로 구현되는 결과물</li>
+            <li>🔄 <strong>Feedback Loop</strong>: 실행 → 확인 → 수정의 초고속 반복</li>
+        </ul>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+        <h2>오늘의 미션: 리조트 예약 모니터</h2>
+        <p style="font-size: 1.5rem;"><strong>목표</strong>: 정동진 솔라뷰 리조트의 특정 날짜(12/30, 12/31) 빈방 잡기</p>
+        <ul>
+            <li><strong>자동 로그인</strong>: 매번 입력하기 귀찮음</li>
+            <li><strong>확실한 알림</strong>: 빈방 생기면 즉시 소리/메시지 알림</li>
+            <li><strong>내 맘대로 설정</strong>: 날짜와 확인 간격을 자유롭게 변경</li>
+        </ul>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide">
+        <h2>난관 (Challenges)</h2>
+        <ul>
+            <li>🚧 <strong>로그인 장벽</strong>: 세션 유지 및 복잡한 폼 처리</li>
+            <li>🧩 <strong>복잡한 UI</strong>: 
+                <ul>
+                    <li>달력을 넘겨야 함 (11월 → 12월)</li>
+                    <li>특정 룸 타입(프리미엄 더블 트윈)만 봐야 함</li>
+                </ul>
+            </li>
+            <li>🔔 <strong>알림의 신뢰성</strong>: 
+                <ul>
+                    <li>카카오톡 API는 너무 복잡함</li>
+                    <li>단순 팝업은 놓칠 수 있음</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slide">
+        <h2>Phase 1: 시작과 피벗 (Pivot)</h2>
+        <ul>
+            <li><strong>초기 시도</strong>: "카카오톡으로 알림 줘"</li>
+            <li><strong>AI의 제안</strong>: "카카오톡은 토큰 갱신이 복잡해요. 텔레그램 어때요?"</li>
+            <li><strong>Vibe Change</strong>: "오, 텔레그램이 더 쉽고 확실하네? 진행시켜!"</li>
+            <li>🎓 <strong>Lesson</strong>: AI는 단순 코딩 봇이 아니라, <strong>최적의 솔루션을 제안하는 파트너</strong></li>
+        </ul>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="slide">
+        <h2>Phase 2: 핵심 로직 돌파 (Gravity)</h2>
+        <p style="font-size: 1.5rem;"><strong>문제</strong>: "그냥 URL만 찌르면 되는 거 아냐?"<br><strong>현실</strong>: 로그인 → 페이지 이동 → 달력 파싱 → 날짜 확인</p>
+        <ul>
+            <li><code>HtmlAgilityPack</code>으로 HTML 구조 정밀 분석</li>
+            <li><strong>ID 817</strong> (프리미엄 더블 트윈) 전용 페이지 발굴</li>
+            <li>"다음 달" 버튼을 자동으로 누르는 로직 구현</li>
+        </ul>
+    </div>
+
+    <!-- Slide 7 -->
+    <div class="slide">
+        <h2>Phase 3: 디테일과 튜닝 (Vibe Sync)</h2>
+        <p style="font-size: 1.5rem;"><strong>사용자</strong>: "5초는 너무 느려. 1초로 해줘. 날짜도 내가 바꾸고 싶어."</p>
+        <ul>
+            <li><code>config.json</code> 도입 → <strong>컴파일 없이 설정 변경</strong></li>
+            <li>하드코딩 제거 → 유연한 아키텍처로 진화</li>
+        </ul>
+        <p style="margin-top: 30px; color: #2980b9;"><strong>경험</strong>: 말 한마디면 코드가 바뀐다.<br>마치 옆자리 시니어 개발자와 대화하듯이.</p>
+    </div>
+
+    <!-- Slide 8 -->
+    <div class="slide">
+        <h2>Phase 4: 위기 해결 (Debugging)</h2>
+        <p style="font-size: 1.5rem;"><strong>버그</strong>: "알림이 한 번 오고 안 와요!", "12월 달력을 못 찾아요!"</p>
+        <ul>
+            <li><strong>상태 머신 수정</strong>: <code>NotAvailable</code> → <code>Available</code> 조건 완화 (반복 알림)</li>
+            <li><strong>브라우저 분석</strong>: AI가 직접 브라우저를 띄워 DOM 구조 확인 (<code>p.year_month</code>)</li>
+            <li><strong>로직 강화</strong>: 현재 연/월을 읽어 타겟 월까지 <code>Next</code> 버튼 클릭 반복</li>
+        </ul>
+    </div>
+
+    <!-- Slide 9 -->
+    <div class="slide">
+        <h2>최종 결과물</h2>
+        <ul>
+            <li>✅ <strong>자동 로그인 & 세션 관리</strong></li>
+            <li>✅ <strong>설정 파일(<code>config.json</code>)로 제어</strong></li>
+            <li>✅ <strong>텔레그램 봇 연동 (확실한 알림음)</strong></li>
+            <li>✅ <strong>스마트한 달력 탐색 (자동 월 이동)</strong></li>
+        </ul>
+    </div>
+
+    <!-- Slide 10 -->
+    <div class="slide lead">
+        <h1>시연 (Demo)</h1>
+        <h3>실제 프로그램 구동 화면</h3>
+    </div>
+
+    <!-- Slide 11 -->
+    <div class="slide">
+        <h2>Key Takeaways</h2>
+        <ul>
+            <li>1️⃣ <strong>개발의 민주화</strong>: 코딩을 몰라도 논리(Logic)만 있으면 SW를 만들 수 있다.</li>
+            <li>2️⃣ <strong>속도의 혁명</strong>: 며칠 걸릴 작업을 20분 만에 완료.</li>
+            <li>3️⃣ <strong>즐거움(Vibe)</strong>: 에러와 싸우는 스트레스 대신, 창조하는 즐거움에 집중.</li>
+        </ul>
+    </div>
+
+    <!-- Slide 12 -->
+    <div class="slide lead">
+        <h1>Q & A</h1>
+        <h3>감사합니다</h3>
+    </div>
+
+    <div class="controls">
+        <button id="prevBtn" onclick="changeSlide(-1)">Previous</button>
+        <button id="nextBtn" onclick="changeSlide(1)">Next</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progressBar');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+            
+            // Update progress bar
+            const progress = ((index + 1) / slides.length) * 100;
+            progressBar.style.width = `${progress}%`;
+
+            // Update buttons
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === slides.length - 1;
+        }
+
+        function changeSlide(direction) {
+            const newIndex = currentSlide + direction;
+            if (newIndex >= 0 && newIndex < slides.length) {
+                currentSlide = newIndex;
+                showSlide(currentSlide);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'Space') {
+                changeSlide(1);
+            } else if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            }
+        });
+
+        // Initial show
+        showSlide(0);
+    </script>
+</body>
+</html>
