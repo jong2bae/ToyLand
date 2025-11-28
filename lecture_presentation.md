@@ -10,7 +10,7 @@ backgroundColor: #fff
 # Antigravity와 함께하는 Vibe Coding
 ### AI와 춤추듯 코딩하며 20분 만에 예약 봇 만들기
 
-**발표자**: [발표자 성함]
+**발표자**: 김종배
 
 ---
 
@@ -119,3 +119,4 @@ backgroundColor: #fff
 
 # Q & A
 ### 감사합니다
+
